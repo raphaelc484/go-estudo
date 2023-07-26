@@ -4,6 +4,7 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
+	"github.com/google/uuid"
 	"github.com/raphaelc484/go-estudo.git/schemas"
 )
 
@@ -19,6 +20,7 @@ func Create_opening_handler(ctx *gin.Context) {
 	}
 
 	opening := schemas.Opening{
+		ID:       uuid.New(),
 		Role:     request.Role,
 		Company:  request.Company,
 		Location: request.Location,
